@@ -1,0 +1,9 @@
+res://MadameEstherInt.tscn
+res://resources/MadameEsther.tres
+res://resources/ButtonBase.tres
+res://resources/discard_pile.tres
+res://resources/ButtonCombo.tres
+res://resources/ButtonSwap.tres
+res://resources/ButtonSpecial.tres
+res://Game.tscn
+res://Maps/Map.tscn
