@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://bw5f0crjyxemv"]
+
+[ext_resource type="Script" path="res://DialogBox.gd" id="1_bstfo"]
+[ext_resource type="Texture2D" uid="uid://crf0ao3r4kqw3" path="res://Assets/DialogBox.png" id="1_jwy36"]
+[ext_resource type="LabelSettings" path="res://resources/LabelSettings.tres" id="2_1nr8v"]
+[ext_resource type="FontFile" uid="uid://bahupohadsb1x" path="res://Fonts/joystix monospace.ttf" id="3_vaxcc"]
+
+[sub_resource type="FontVariation" id="FontVariation_7unrb"]
+base_font = ExtResource("3_vaxcc")
+spacing_glyph = 2
+spacing_space = -3
+
+[sub_resource type="Animation" id="Animation_hnelq"]
+resource_name = "show_text"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_un1oj"]
+_data = {
+"show_text": SubResource("Animation_hnelq")
+}
+
+[node name="DialogBox" type="NinePatchRect"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(960, 150)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = 700.0
+offset_right = -320.0
+offset_bottom = -50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture = ExtResource("1_jwy36")
+script = ExtResource("1_bstfo")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 22.0
+offset_right = -21.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_7unrb")
+label_settings = ExtResource("2_1nr8v")
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 2
+max_lines_visible = 4
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_un1oj")
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

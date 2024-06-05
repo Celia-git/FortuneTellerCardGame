@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://djk6282h74rmd"]
+
+[ext_resource type="Script" path="res://ConfettiGenerator.gd" id="1_40568"]
+[ext_resource type="AudioStream" uid="uid://03w577kw1aia" path="res://Assets/confetti_1.wav" id="2_c4epg"]
+
+[node name="ConfettiGenerator" type="Node2D"]
+script = ExtResource("1_40568")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.49
+lifetime_randomness = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+direction = Vector2(0, 1)
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+radial_accel_min = 13.6
+radial_accel_max = 24.49
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(-64, 0)
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.49
+lifetime_randomness = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+direction = Vector2(0, 1)
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+radial_accel_min = 13.6
+radial_accel_max = 24.49
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+position = Vector2(64, 0)
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.49
+lifetime_randomness = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+direction = Vector2(0, 1)
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+radial_accel_min = 13.6
+radial_accel_max = 24.49
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_c4epg")

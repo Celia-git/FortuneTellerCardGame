@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1521gccs2hsp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrieg"]
+size = Vector2(27, 32.5)
+
+[node name="Match" type="Area2D"]
+texture_filter = 1
+
+[node name="Layer0" type="Sprite2D" parent="."]
+
+[node name="Layer1" type="Sprite2D" parent="."]
+
+[node name="Layer2" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.5, 9)
+shape = SubResource("RectangleShape2D_vrieg")

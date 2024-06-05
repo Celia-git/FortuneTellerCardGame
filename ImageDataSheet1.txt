@@ -1,0 +1,89 @@
+Name/Filename/Position:X/Position:Y/Size:X/Size:Y/Frame Amount/Sprite Amount/
+Targets/Knockem.png/0/0/128/128/4/4/
+KnockemCannonball/Knockem.png/0/128/32/32/1/1/
+KnockemSideCannon/Knockem.png/32/144/64/16/1/1/
+Ring/Ringtoss.png/0/0/32/128/1/8/
+RingShine/Ringtoss.png/0/128/256/16/8/1/
+Bottle/Ringtoss.png/32/0/16/128/1/4/
+Yellow Duck/Ducks.png/0/0/16/16/1/1/
+Blue Duck/Ducks.png/16/0/16/16/1/1/
+Bottom Yellow Duck/Ducks.png/0/16/48/48/1/1/
+Bottom Blue Duck/Ducks.png/0/64/48/48/1/1/
+Red Square/Ducks.png/48/0/16/16/1/1/
+Red Circle/Ducks.png/48/16/16/16/1/1/
+Red Triangle/Ducks.png/48/32/16/16/1/1/
+Red Diamond/Ducks.png/48/48/16/16/1/1/
+Yellow Square/Ducks.png/64/0/16/16/1/1/
+Yellow Circle/Ducks.png/64/16/16/16/1/1/
+Yellow Triangle/Ducks.png/64/32/16/16/1/1/
+Yellow Diamond/Ducks.png/64/48/16/16/1/1/
+Green Square/Ducks.png/80/0/16/16/1/1/
+Green Circle/Ducks.png/80/16/16/16/1/1/
+Green Triangle/Ducks.png/80/32/16/16/1/1/
+Green Diamond/Ducks.png/80/48/16/16/1/1/
+Blue Square/Ducks.png/96/0/16/16/1/1/
+Blue Circle/Ducks.png/96/16/16/16/1/1/
+Blue Triangle/Ducks.png/96/32/16/16/1/1/
+Blue Diamond/Ducks.png/96/48/16/16/1/1/
+Pump/IceCream.png/0/0/80/64/1/1/
+Cherry/IceCream.png/0/64/16/16/1/1/
+CherryCase/IceCream.png/16/64/48/32/1/1/
+Whipped Cream Can/IceCream.png/80/0/32/64/1/1/
+Marshmallow/IceCream.png/0/96/16/16/1/1/
+Oreo/IceCream.png/16/96/16/16/1/1/
+Graham Cracker/IceCream.png/32/96/16/16/1/1/
+Chocolate Candy/IceCream.png/48/96/16/16/1/1/
+Gummy Bear/IceCream.png/64/96/16/16/1/1/
+Rainbow Sprinkle/IceCream.png/0/112/16/16/1/1/
+Pearl/IceCream.png/16/112/16/16/1/1/
+Peanuts/IceCream.png/32/112/16/16/1/1/
+Peanut Butter Cups/IceCream.png/48/112/16/16/1/1/
+Shredded Coconut/IceCream.png/0/128/16/16/1/1/
+Chili Crisp/IceCream.png/64/112/16/16/1/1/
+Walnuts/IceCream.png/16/128/16/16/1/1/
+Malted Milk Balls/IceCream.png/32/128/16/16/1/1/
+Pecans/IceCream.png/48/128/16/16/1/1/
+Pistachios/IceCream.png/64/128/16/16/1/1/
+Ship/Ships.png/0/0/144/192/6/8/
+ShipsCannonball/Ships.png/144/0/32/32/1/1/
+Kernel/Popper.png/304/112/16/16/1/1/
+CoatedPopcorn/Popper.png/320/128/16/64/1/4/
+Popcorn/Popper.png/304/128/16/64/1/4/
+Scoop/Popper.png/256/112/48/64/1/1/
+Compartment/Popper.png/256/208/128/16/1/1/
+Lid/Popper.png/256/192/112/16/1/1/
+CardStone/Cards.png/0/16/32/32/1/1/
+CardWater/Cards.png/0/48/32/32/1/1/
+CardFire/Cards.png/0/80/32/32/1/1/
+CardCrone/Cards.png/32/16/32/32/1/1/
+CardMother/Cards.png/32/48/32/32/1/1/
+CardMaiden/Cards.png/32/80/32/32/1/1/
+CardWarrior/Cards.png/64/16/32/32/1/1/
+CardMage/Cards.png/64/48/32/32/1/1/
+CardRogue/Cards.png/64/80/32/32/1/1/
+Stone/Cards.png/0/112/48/48/1/1/
+Water/Cards.png/48/112/48/48/1/1/
+Fire/Cards.png/96/112/48/48/1/1/
+Crone/Cards.png/0/160/48/48/1/1/
+Mother/Cards.png/48/160/48/48/1/1/
+Maiden/Cards.png/96/160/48/48/1/1/
+Warrior/Cards.png/0/208/48/48/1/1/
+Mage/Cards.png/48/208/48/48/1/1/
+Rogue/Cards.png/96/208/48/48/1/1/
+TableCards/Cards.png/160/32/32/112/2/7/
+TableDeck/Cards.png/32/0/32/16/1/1/
+DeckTopCard/Cards.png/0/0/32/16/1/1/
+CardJoker/Cards.png/96/16/32/32/1/1/
+CardPriest/Cards.png/96/48/32/32/1/1/
+CardSeer/Cards.png/96/80/32/32/1/1/
+CardSpectre/Cards.png/128/80/32/32/1/1/
+TableDiscard/Cards.png/64/0/32/16/1/1/
+Priest/Cards.png/144/208/48/48/1/1/
+Seer/Cards.png/192/208/48/48/1/1/
+Spectre/Cards.png/144/160/48/48/1/1/
+ButtonBase/Cards.png/144/0/32/32/1/1/
+ButtonBaseFocused/Cards.png/176/0/32/32/1/1/
+ButtonBasePressed/Cards.png/208/0/32/32/1/1/
+ButtonCombo/Cards.png/96/0/16/16/1/1/
+ButtonSwap/Cards.png/112/0/16/16/1/1/
+ButtonSpecial/Cards.png/128/0/16/16/1/1/

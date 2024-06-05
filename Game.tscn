@@ -1,0 +1,166 @@
+[gd_scene load_steps=21 format=3 uid="uid://tw7frwkjl31a"]
+
+[ext_resource type="Script" path="res://CardGame.gd" id="1_i4opg"]
+[ext_resource type="PackedScene" uid="uid://dygjfd1e7yieg" path="res://Deck.tscn" id="2_3tfuf"]
+[ext_resource type="Script" path="res://DealerHand.gd" id="2_6k0rx"]
+[ext_resource type="Texture2D" uid="uid://b5s2ykhxky074" path="res://resources/ButtonBase.tres" id="3_lwqib"]
+[ext_resource type="Script" path="res://Player.gd" id="4_ll6ht"]
+[ext_resource type="Texture2D" uid="uid://lp5qnkxvtc5e" path="res://resources/discard_pile.tres" id="5_amdh0"]
+[ext_resource type="Script" path="res://Discard.gd" id="6_hwsuo"]
+[ext_resource type="Texture2D" uid="uid://jn0kgpoxu5as" path="res://resources/ButtonCombo.tres" id="7_65mkm"]
+[ext_resource type="StyleBox" uid="uid://da3l4sgd8gmg" path="res://resources/panel_background.tres" id="7_utchk"]
+[ext_resource type="StyleBox" uid="uid://wt63rw5kjiq2" path="res://resources/panel_hover.tres" id="8_l5hf0"]
+[ext_resource type="Texture2D" uid="uid://dkybwwrkgfb7k" path="res://resources/ButtonSwap.tres" id="8_lipdx"]
+[ext_resource type="Texture2D" uid="uid://c21bulcw2van2" path="res://resources/ButtonSpecial.tres" id="9_h8l1y"]
+[ext_resource type="Texture2D" uid="uid://bdrvadyp7v5nq" path="res://resources/RightArrow.tres" id="13_37wvh"]
+[ext_resource type="PackedScene" uid="uid://djk6282h74rmd" path="res://ConfettiGenerator.tscn" id="14_tfkte"]
+[ext_resource type="AudioStream" uid="uid://8ikow017my60" path="res://Assets/cards_pass.wav" id="15_k1ctm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq4qh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmsam"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1io1k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bt4b6"]
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.682353, 0.329412, 0.85098, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uw4cc"]
+size = Vector2(320, 8)
+
+[node name="Game" type="Node2D"]
+texture_filter = 1
+position = Vector2(10, 10)
+script = ExtResource("1_i4opg")
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(0, 154)
+script = ExtResource("4_ll6ht")
+
+[node name="Special" type="Area2D" parent="Player"]
+
+[node name="ButtonSprite" type="Sprite2D" parent="Player/Special"]
+texture = ExtResource("3_lwqib")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Special"]
+texture = ExtResource("9_h8l1y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Special"]
+shape = SubResource("RectangleShape2D_pq4qh")
+
+[node name="Combo" type="Area2D" parent="Player"]
+position = Vector2(32, 0)
+
+[node name="ButtonSprite" type="Sprite2D" parent="Player/Combo"]
+texture = ExtResource("3_lwqib")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Combo"]
+texture = ExtResource("7_65mkm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Combo"]
+shape = SubResource("RectangleShape2D_cmsam")
+
+[node name="Exchange" type="Area2D" parent="Player"]
+position = Vector2(64, 0)
+
+[node name="ButtonSprite" type="Sprite2D" parent="Player/Exchange"]
+texture = ExtResource("3_lwqib")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Exchange"]
+texture = ExtResource("8_lipdx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Exchange"]
+shape = SubResource("RectangleShape2D_1io1k")
+
+[node name="SpecialActionDialog" type="PopupMenu" parent="Player"]
+position = Vector2i(110, 40)
+theme_override_styles/panel = ExtResource("7_utchk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bt4b6")
+
+[node name="SpecialTriggerDialog" type="PopupMenu" parent="Player"]
+position = Vector2i(110, 40)
+theme_override_styles/panel = ExtResource("7_utchk")
+theme_override_styles/hover = ExtResource("8_l5hf0")
+
+[node name="DrawTokens" type="Node2D" parent="Player"]
+position = Vector2(0, -154)
+
+[node name="Dealer" type="Node2D" parent="."]
+script = ExtResource("2_6k0rx")
+
+[node name="Deck" parent="." instance=ExtResource("2_3tfuf")]
+position = Vector2(220, 100)
+
+[node name="Discard" type="Node2D" parent="."]
+position = Vector2(80, 100)
+script = ExtResource("6_hwsuo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Discard"]
+texture = ExtResource("5_amdh0")
+offset = Vector2(0, -3)
+
+[node name="AchievementsTab" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AchievementsTab"]
+position = Vector2(160, 0)
+shape = SubResource("RectangleShape2D_uw4cc")
+
+[node name="Sprite2D" type="Sprite2D" parent="AchievementsTab"]
+visible = false
+z_index = 1
+position = Vector2(150, 0)
+rotation = 1.5708
+texture = ExtResource("13_37wvh")
+
+[node name="ConfettiGenerator" parent="." instance=ExtResource("14_tfkte")]
+position = Vector2(160, 200)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_k1ctm")
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="add_draw_bonus" from="Player" to="." method="_add_draw_bonus"]
+[connection signal="combo_cards" from="Player" to="." method="_combo_cards"]
+[connection signal="discard" from="Player" to="." method="add_to_discard"]
+[connection signal="discarded" from="Player" to="." method="_on_player_discarded"]
+[connection signal="exchange_cards" from="Player" to="." method="_exchange_cards"]
+[connection signal="full_exchange" from="Player" to="." method="_full_exchange"]
+[connection signal="get_gold_card" from="Player" to="." method="_get_gold_card"]
+[connection signal="mouse_entered" from="Player" to="." method="_mouse_entered"]
+[connection signal="mouse_exited" from="Player" to="." method="_mouse_exited"]
+[connection signal="pick_one_discard" from="Player" to="Discard" method="display_cards"]
+[connection signal="play_button_sound" from="Player" to="." method="_play_button_sound"]
+[connection signal="ready" from="Player" to="." method="_on_player_ready"]
+[connection signal="replace_hand" from="Player" to="." method="_replace_hand"]
+[connection signal="update_label" from="Player" to="." method="_on_player_update_label"]
+[connection signal="input_event" from="Player/Special" to="Player" method="_on_button_input_event" binds= [0]]
+[connection signal="mouse_entered" from="Player/Special" to="Player" method="_on_button_mouse_entered" binds= [0]]
+[connection signal="mouse_exited" from="Player/Special" to="Player" method="_on_button_mouse_exited" binds= [0]]
+[connection signal="input_event" from="Player/Combo" to="Player" method="_on_button_input_event" binds= [1]]
+[connection signal="mouse_entered" from="Player/Combo" to="Player" method="_on_button_mouse_entered" binds= [1]]
+[connection signal="mouse_exited" from="Player/Combo" to="Player" method="_on_button_mouse_exited" binds= [1]]
+[connection signal="input_event" from="Player/Exchange" to="Player" method="_on_button_input_event" binds= [2]]
+[connection signal="mouse_entered" from="Player/Exchange" to="Player" method="_on_button_mouse_entered" binds= [2]]
+[connection signal="mouse_exited" from="Player/Exchange" to="Player" method="_on_button_mouse_exited" binds= [2]]
+[connection signal="id_pressed" from="Player/SpecialActionDialog" to="Player" method="_on_special_action_dialog_id_pressed"]
+[connection signal="id_pressed" from="Player/SpecialTriggerDialog" to="Player" method="_on_special_trigger_dialog_id_pressed"]
+[connection signal="draw_card" from="Deck" to="." method="_draw"]
+[connection signal="empty_deck" from="Deck" to="." method="_reshuffle_deck"]
+[connection signal="mouse_entered" from="Deck" to="." method="_mouse_entered"]
+[connection signal="mouse_exited" from="Deck" to="." method="_mouse_exited"]
+[connection signal="play_shuffle_sound" from="Deck" to="." method="_play_shuffle_sound"]
+[connection signal="discard_over" from="Discard" to="." method="_on_discard_over"]
+[connection signal="return_card" from="Discard" to="Player" method="add_card"]
+[connection signal="update_label" from="Discard" to="." method="_on_discard_update_label"]
+[connection signal="input_event" from="AchievementsTab" to="." method="_on_achievements_tab_input_event"]
+[connection signal="mouse_entered" from="AchievementsTab" to="." method="_on_achievements_tab_mouse_entered"]
+[connection signal="mouse_exited" from="AchievementsTab" to="." method="_on_achievements_tab_mouse_exited"]

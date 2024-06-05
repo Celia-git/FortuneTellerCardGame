@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://7k7h3h04iobj"]
+
+[ext_resource type="Script" path="res://InteriorScenes.gd" id="1_xjuvi"]
+[ext_resource type="AudioStream" uid="uid://dpaeatql8xben" path="res://Assets/little_button_sound.wav" id="2_equo3"]
+
+[node name="ParallaxBG" type="ParallaxBackground"]
+script = ExtResource("1_xjuvi")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 0.999
+anchor_bottom = 1.0
+offset_right = 0.599854
+offset_bottom = 2.0
+mouse_filter = 1
+
+[node name="LeftButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 302.0
+offset_right = 215.0
+offset_bottom = 675.0
+mouse_filter = 1
+
+[node name="RightButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1393.0
+offset_top = 304.0
+offset_right = 1519.0
+offset_bottom = 677.0
+mouse_filter = 1
+
+[node name="CarryOver" type="CanvasLayer" parent="."]
+
+[node name="Nodes" type="Node2D" parent="CarryOver"]
+texture_filter = 1
+
+[node name="SoundEffects" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_equo3")
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
+[connection signal="mouse_entered" from="Control/LeftButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/LeftButton" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Control/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="mouse_entered" from="Control/RightButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/RightButton" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Control/RightButton" to="." method="_on_right_button_pressed"]

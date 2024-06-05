@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dygjfd1e7yieg"]
+
+[ext_resource type="Script" path="res://Deck.gd" id="1_6v4ba"]
+[ext_resource type="Texture2D" uid="uid://maax6k5akclu" path="res://Assets/Cards.png" id="2_28qa7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_somsg"]
+atlas = ExtResource("2_28qa7")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py057"]
+atlas = ExtResource("2_28qa7")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6xmo"]
+
+[node name="Deck" type="Area2D"]
+script = ExtResource("1_6v4ba")
+
+[node name="TopCard" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_somsg")
+
+[node name="Bottom" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_py057")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s6xmo")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
