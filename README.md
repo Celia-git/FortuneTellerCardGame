@@ -1,3 +1,6 @@
+To open in editor, download the zipped folder and extract to a directory.
+Import the directory in the Godot editor to view project
+
 #Instructions:
 
 ##Card Game
