@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c2j5clm8mp8ma"]
+
+[ext_resource type="FontFile" uid="uid://bahupohadsb1x" path="res://Fonts/joystix monospace.ttf" id="1_ms8o4"]
+
+[resource]
+font = ExtResource("1_ms8o4")
+font_size = 20
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)

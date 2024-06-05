@@ -1,0 +1,56 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://bqp3ctdvl3lpr"]
+
+[ext_resource type="Texture2D" uid="uid://dg358fhikg1si" path="res://Assets/MadameEsther.png" id="1_t78bs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvp4o"]
+atlas = ExtResource("1_t78bs")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfwtf"]
+atlas = ExtResource("1_t78bs")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4564"]
+atlas = ExtResource("1_t78bs")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvkod"]
+atlas = ExtResource("1_t78bs")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwmig"]
+atlas = ExtResource("1_t78bs")
+region = Rect2(0, 0, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvp4o")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfwtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4564")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvkod")
+}],
+"loop": true,
+"name": &"loop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwmig")
+}],
+"loop": false,
+"name": &"start_fortune",
+"speed": 5.0
+}]
