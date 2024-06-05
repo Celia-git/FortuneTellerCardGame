@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://db1j5o0lpjeqa"]
+
+[ext_resource type="Script" path="res://Maps/Map.gd" id="1_rwc3s"]
+[ext_resource type="PackedScene" uid="uid://bw5f0crjyxemv" path="res://DialogBox.tscn" id="2_2o1lw"]
+[ext_resource type="Texture2D" uid="uid://bbbc8rosggvwl" path="res://Assets/PixelWorldFrame.png" id="3_6sewc"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_rwc3s")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="DialogBox" parent="CanvasLayer" instance=ExtResource("2_2o1lw")]
+z_index = 2
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PixelFrame" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+position = Vector2(320, 218)
+scale = Vector2(3, 3)
+texture = ExtResource("3_6sewc")
+centered = false
+offset = Vector2(-3, -3)
+
+[connection signal="child_exiting_tree" from="CanvasLayer" to="." method="_on_child_exiting_tree"]
+[connection signal="text_finished" from="CanvasLayer/DialogBox" to="." method="_on_dialog_box_text_finished"]
